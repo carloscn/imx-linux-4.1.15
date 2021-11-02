@@ -494,6 +494,7 @@ asmlinkage __visible void __init start_kernel(void)
 	char *command_line;
 	char *after_dashes;
 
+	printk(">>>>>>>>>>This is the Carlos test linux kernel dirty.<<<<<<<<<\n");
 	/*
 	 * Need to run as early as possible, to initialize the
 	 * lockdep hash:
@@ -502,7 +503,6 @@ asmlinkage __visible void __init start_kernel(void)
 	set_task_stack_end_magic(&init_task);
 	smp_setup_processor_id();
 	debug_objects_early_init();
-
 	/*
 	 * Set up the the initial canary ASAP:
 	 */
