@@ -1,0 +1,10 @@
+#BASEINCLUDE	?= /lib/modules/`uname -r`/build
+BASEINCLUDE	?= /home/carlos/workspace/work/linux-imx-rel_imx_4.1.15_2.1.0_ga
+myhello-objs	:=	hello.o
+obj-m	:=	myhello.o
+
+all	:
+	$(MAKE) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C $(BASEINCLUDE) M=$(PWD) modules;
+clean	:
+	$(MAKE) ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -C $(BASEINCLUDE) M=$(PWD) clean;
+	rm -rf *.ko
