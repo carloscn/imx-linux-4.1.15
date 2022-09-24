@@ -3,13 +3,13 @@
 
 static int __init sum_init(void)
 {
-    printk("my first kernel module init\n");
+    printk("my sum_init kernel module init\n");
     return 0;
 }
 
 static void __exit sum_exit(void)
 {
-    printk("carlos test goodbye.\n");
+    printk("carlos sum_exit test goodbye.\n");
 }
 
 static int sum(int a, int b)
