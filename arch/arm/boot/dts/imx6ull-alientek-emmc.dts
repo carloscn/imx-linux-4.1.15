@@ -295,7 +295,6 @@
 		compatible = "fsl,mag3110";
 		reg = <0x0e>;
 		position = <2>;
-		status = "disabled";
 	};
 
 	ap3216c@1e {
@@ -350,13 +349,13 @@
 		interrupts = <9 0>;
 		reset-gpios = <&gpio5 9 GPIO_ACTIVE_LOW>;
 		irq-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 
         goodix_ts@5d {
-                compatible = "goodix,gt9xx", "goodix,gt1151";
-                reg = <0x14>;
-                status = "disabled";
+                compatible = "goodix,gt9xx";
+                reg = <0x5d>;
+                status = "okay";
                 interrupt-parent = <&gpio1>;
                 interrupts = <9 0>;
                 pinctrl-0 = <&ts_int_pin
@@ -418,7 +417,7 @@
 				MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN	0x1b0b0
 				MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00	0x1b0b0
 				MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01	0x1b0b0
-				MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001B009
+				MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b031
 			>;
 		};
 
@@ -433,7 +432,7 @@
 				MX6UL_PAD_ENET2_TX_EN__ENET2_TX_EN	0x1b0b0
 				MX6UL_PAD_ENET2_TX_DATA0__ENET2_TDATA00	0x1b0b0
 				MX6UL_PAD_ENET2_TX_DATA1__ENET2_TDATA01	0x1b0b0
-				MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001B009
+				MX6UL_PAD_ENET2_TX_CLK__ENET2_REF_CLK2	0x4001b031
 			>;
 		};
 
@@ -800,7 +799,8 @@
                         hsync-active = <0>;
                         vsync-active = <0>;
                         de-active = <1>;
-                        pixelclk-active = <1>;
+			/* rgb to hdmi: pixelclk-ative should be set to 1 */
+                        pixelclk-active = <0>;
                         };
                 };
         };
